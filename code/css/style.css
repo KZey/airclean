@@ -1,0 +1,261 @@
+@charset "utf-8";
+/*===============================EXTRA FONT=============================================*/
+@font-face {
+ font-family: 'ZurichCnBTBold';
+ src: url('../fonts/zurchbc_1-webfont.eot');
+ src: url('../fonts/zurchbc_1-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/zurchbc_1-webfont.woff') format('woff'), url('../fonts/zurchbc_1-webfont.ttf') format('truetype'), url('../fonts/zurchbc_1-webfont.svg#ZurichCnBTBold') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+ @font-face {
+ font-family: 'ZurichCnBTBoldItalic';
+ src: url('../fonts/zurchbci_1-webfont.eot');
+ src: url('../fonts/zurchbci_1-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/zurchbci_1-webfont.woff') format('woff'), url('../fonts/zurchbci_1-webfont.ttf') format('truetype'), url('../fonts/zurchbci_1-webfont.svg#ZurichCnBTBoldItalic') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+ @font-face {
+ font-family: 'ZurichCnBTRegular';
+ src: url('../fonts/zurchc_1-webfont.eot');
+ src: url('../fonts/zurchc_1-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/zurchc_1-webfont.woff') format('woff'), url('../fonts/zurchc_1-webfont.ttf') format('truetype'), url('../fonts/zurchc_1-webfont.svg#ZurichCnBTRegular') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+
+
+
+/*==END==*/
+
+
+body {margin:0 auto; padding:0px; background:#eff7f9 url(../images/main_bg.png) center top no-repeat; font-family:Arial, Helvetica, sans-serif; color:#1d1d1d; font-size:14px; line-height:18px;}
+
+/*========================================COMMON=================================================*/
+h1, h2, h3, h4, h5, p, ul, li{margin:0px; padding:0px;}
+.clear{ clear:both;} a img{ border:none;}
+/*==END==*/
+
+a{text-decoration:none; color:#0099FF;}
+a:hover{text-decoration:none; color:#115464;}
+
+.condition{font-size:14px; font-weight:normal;}
+
+#wrapper{width:980px; margin:0 auto;}
+
+
+/*================== Header Part Start Here ====================*/
+#headerContainer{margin:10px 0 0 0px; padding:0 0 0 0px;}
+.logoContainer{width:190px; float:left;}
+.toprightContainer{width:300px; float:right; text-align:right; margin-right:8px;}
+.free_delievery{font-family: 'ZurichCnBTRegular', Arial, Helvetica, sans-serif; font-size:25px; line-height:30px; color:#115464; clear:both; }
+.cell_no{font-family: Arial, Helvetica, sans-serif; font-size:20px; line-height:25px; color:#21b1cb; clear:both;}
+.blueair_logo{margin:8px 0 0 0px;}
+
+#navContainer{margin:6px 0 0 0px; padding:0 0 0 0px; background:#21b1cb; display:table; width:100%;}
+#navContainer ul{list-style-type:none; display:table-row;}
+#navContainer ul li{font-family: 'ZurichCnBTRegular', Arial, Helvetica, sans-serif; font-size:15px; text-transform:uppercase; line-height:35px; display:table-cell;}
+#navContainer ul li a{display:inline-block; text-decoration:none; color:#FFFFFF; padding:0 35px 0 29px; background:#21b1cb url(../images/bar.gif) left top no-repeat;}
+#navContainer ul li a:hover{text-decoration:none; color:#fff; background:#115464;}
+#navContainer ul li a.active{color:#fff; background:#115464;}
+/*================== Header Part End Here ====================*/
+
+/*================== Body Part Start Here ====================*/
+#bodyContainer{margin:0px 0 0 0px; padding:0 0 0 0px; background:url(../images/body_bg.gif);}
+#bodysubContainer{padding:15px;}
+
+.bodyleftContainer1{padding:10px 10px 0px 10px;}
+.bodyleftContainer1 h1{font-family:'ZurichCnBTBold', Arial, Helvetica, sans-serif; font-size:25px; color:#115464; font-weight:normal; line-height:25px; margin-bottom:10px;}
+.bodyleftContainer1 h2{font:22px/25px Arial, Helvetica, sans-serif; color:#000; font-weight:normal; padding:5px 5px 5px 10px; background:#ebf5f7; border:#d4e9ee solid 1px;}
+.bodyleftContainer1 h3{font:14px/20px Arial, Helvetica, sans-serif; color:#21b1cb; font-weight:bold;}
+.bodyleftContainer1 p{ font-size:14px; line-height:18px;}
+
+.bodyleftContainer1 .artical{ width:430px; float:left; padding:10px; background:#ecfafb; border:dashed 1px #d4e3e4; margin-bottom:25px;}
+.bodyleftContainer1 .artical h3{color:#21b1cb; font-size:18px; font-weight:normal; margin-bottom:10px;}
+
+.bodyleftContainer1 .artical a{color:#21b1cb; text-decoration:none; margin-top:10px; float:right;}
+.bodyleftContainer1 .artical a:hover{color:#115464; text-decoration:none;}
+
+.bodyleftContainer{width:725px; float:left; padding:10px 0 0px 10px;}
+.bodyleftContainer h1{font-family:'ZurichCnBTBold', Arial, Helvetica, sans-serif; font-size:25px; color:#115464; font-weight:normal; line-height:25px; margin-bottom:10px;}
+
+.bodyleftContainer h2{font:22px/25px Arial, Helvetica, sans-serif; color:#000; font-weight:normal; padding:5px 5px 5px 10px; background:#ebf5f7; border:#d4e9ee solid 1px;}
+.bodyleftContainer h3{font:14px/20px Arial, Helvetica, sans-serif; color:#21b1cb; font-weight:bold;}
+.bodyleftContainer p{ font-size:14px; line-height:18px;}
+
+.bottom_box{ width:200px; float:left; background:#FFFFFF; border:#c5ecf3 solid 1px; margin-right:135px; padding:7px;
+-webkit-box-shadow: 0px 3px 3px 0px #b1b1b1;
+-moz-box-shadow: 0px 3px 3px 0px #b1b1b1;
+-o-box-shadow: 0px 3px 3px 0px #b1b1b1;
+box-shadow: 0px 3px 3px 0px #b1b1b1;
+
+
+}
+.bottom_box p{font-size:17px; line-height:18px; color:#21b1cb; text-align:center; margin-bottom:10px; }
+.bottom_box .price{ font:25px/30px Arial, Helvetica, sans-serif; border-top:#eeeeee solid 1px; text-align:center; margin:10px 10px 5px 10px; padding:10px 0 0px 0px;}
+.bodyrightContainer{width:200px; float:right;}
+.bodyrightContainer h1{font-family:'ZurichCnBTRegular', Arial, Helvetica, sans-serif; font-size:17px; color:#fff; font-weight:normal; background:#21b1cb; padding:12px 10px 5px 10px; text-transform:uppercase;}
+
+.menu{ margin:0px; padding:0px; border:#bfdde5 solid 1px;}
+.menu ul{list-style-type:none;}
+.menu ul li{list-style:none; width:200px;}
+.menu ul li a{text-transform:none; color:#115464; display:block; padding:8px 8px 8px 22px; font-weight:bold; font-size:12px; border-bottom:#bfdde5 solid 1px; background:#e7f3f6 url(../images/arrow.png) 10px 12px no-repeat;}
+.menu ul li a:hover{text-transform:none; color:#21b1cb; background:#f0f8fa url(../images/arrow_h.png) 10px 12px no-repeat;}
+.menu ul li a.active{background:#e7f3f6 url(../images/arrow_d.png) 10px 12px no-repeat; color:#000000;}
+
+
+.menu1 ul{list-style-type:none;}
+.menu1 ul li{ list-style:circle;}
+.menu1 ul li a{text-transform:none; color:#115464; display:block; padding:8px 8px 8px 28px; font-weight:normal; font-size:12px; border-bottom:#bfdde5 solid 1px; background:#e7f3f6 url(../images/arrow.png) 20px 12px no-repeat;}
+.menu1 ul li a:hover{text-transform:none; color:#21b1cb; background:#f0f8fa url(../images/arrow_h.png) 20px 12px no-repeat;}
+
+
+.commentContainer{margin:0 0 0 0px; padding:0 0 0 0px;}
+.commentContainer h2{font:21px/25px Arial, Helvetica, sans-serif; color:#21b1cb; padding:5px 5px 5px 10px; background:#ebf5f7; border:#d4e9ee solid 1px;}
+.commentContainer p{float:right; width:580px; margin-top:10px;}
+.commentContainer .img{padding:6px; border:#e5e6eb solid 1px; background:#FFFFFF; float:left;}
+.bottom_shadow{background:url(../images/shadow_bottom.png) top center no-repeat; height:19px; width:725px; margin:15px 0 0px 0px;}
+
+.slider{ width:980px;}
+.footerbox{ padding:15px;}
+.box1{width:278px; height:117px; background:url(../images/box1.gif) no-repeat; float:left; padding:15px;}
+.box1 h1{font-family:'ZurichCnBTBold', Arial, Helvetica, sans-serif; font-size:25px; color:#115464; font-weight:normal; line-height:25px;}
+.box1 h2{font-family:'ZurichCnBTRegular', Arial, Helvetica, sans-serif; font-size:17px; color:#21b1cb; font-weight:normal; line-height:30px;}
+
+.box2{width:278px; height:117px; background:url(../images/box2.gif) no-repeat; float:left; padding:15px; margin-left:13px;}
+.box2 h1{font-family:'ZurichCnBTBold', Arial, Helvetica, sans-serif; font-size:25px; color:#115464; font-weight:normal; line-height:25px; text-align:right; width:180px; float:right;}
+
+.box3{width:278px; height:117px; background:url(../images/box3.jpg) no-repeat; float:left; padding:15px; margin-left:13px;}
+.box3 h1{font-family:'ZurichCnBTBold', Arial, Helvetica, sans-serif; font-size:25px; color:#fff; font-weight:normal; line-height:25px; width:180px; }
+
+a.button {background: transparent url('../images/bg_button_a.png') no-repeat scroll top right; color: #fff; display: block;
+    float: left; font: normal 12px arial, sans-serif; height: 30px; padding-right: 15px; text-decoration: none;
+	font-size:11px; text-transform:uppercase; font-weight:bold;}
+
+a.button span {background: transparent url('../images/bg_button_span.png') no-repeat; display: block; line-height: 13px; padding: 10px 0 7px 15px
+} 
+a.button:hover {background-position: bottom right; color: #fff; outline: none;}
+a.button:hover span { background-position: bottom left; padding: 10px 0 7px 15px;} 
+
+/*================== Body Part End Here ====================*/
+
+/*================== Footer Part Start Here ====================*/
+#footerContainer{width:100%; background:#21b1cb; padding:10px 0px; margin-top:10px;}
+.footernav{width:980px; margin:0 auto; text-align:center;}
+.footernav ul{list-style-type:none;}
+.footernav ul li{ display:inline; }
+.footernav ul li a{text-decoration:none; color:#c5ecf3; font-weight:bold; font-size:12px; margin:0 0px 0 10px; border-right:#c5ecf3 solid 1px; padding-right:10px;}
+.footernav ul li a:hover{text-decoration:none; color:#fff;}
+
+.copyright{ text-align:center; font-size:11px; color:#999999; padding:6px;}
+/*================== Footer Part End Here ====================*/
+
+/*================== Product Part Start Here ====================*/
+
+.product_left{width:325px; float:left; }
+.product_left h1{font-family:Arial, Helvetica, sans-serif; font-size:20px; color:#21b1cb; font-weight:normal; line-height:20px;}
+.product_left p{ line-height:18px;}
+.product_left .img{ padding:6px; border:#e5e6eb solid 1px; background:#FFFFFF; margin-left:10px;}
+
+.footer_product{width:428px; float:left; background:#FFFFFF; padding:15px; border:#c5ecf3 solid 1px;}
+.footer_product h1{font-family:Arial, Helvetica, sans-serif; font-size:19px; color:#21b1cb; font-weight:normal; line-height:22px;}
+.footer_product p{ line-height:18px;}
+.footer_product .img{ padding:6px; border:#e5e6eb solid 1px; background:#FFFFFF; margin-left:10px;}
+
+
+.nav{margin:10px 0 0 0; padding:0px; background:#21b1cb;}
+.nav ul
+{
+float:left;
+width:100%;
+padding:0;
+margin:0;
+list-style-type:none;
+background:#21b1cb;
+}
+.nav a
+{
+float:left;
+text-decoration:none;
+font-family: 'ZurichCnBTRegular', Arial, Helvetica, sans-serif; font-size:15px; text-transform:uppercase;
+color:white;
+padding:0.7em 1.5em 0.5em 1.5em;
+background:#21b1cb url(../images/bar.gif) left top no-repeat;
+text-align:center;
+}
+.nav a:hover {background-color:#115464;}
+.nav a.active{background-color:#115464;}
+li {display:inline;}
+
+
+
+.glossymenu{
+margin: 0px 0;
+padding: 0;
+/*width: 170px; width of menu*/
+border: 1px solid #bfdde5;
+}
+
+.glossymenu a.menuitem{
+font: bold 12px "arial", Verdana, Helvetica, sans-serif;
+color: #115464;
+display: block;
+position: relative; /*To help in the anchoring of the ".statusicon" icon image*/
+width: auto;
+padding: 6px 0;
+padding-left: 10px;
+text-decoration: none;
+border-bottom:#bfdde5 solid 1px;
+background:#e7f3f6;
+}
+
+
+.glossymenu a.menuitem:visited, .glossymenu .menuitem:active{
+color: #115464;
+}
+
+.glossymenu a.menuitem .statusicon{ /*CSS for icon image that gets dynamically added to headers*/
+position: absolute;
+top: 8px;
+right: 5px;
+border: none;
+}
+
+.glossymenu a.menuitem:hover{ background:#f0f8fa;
+}
+
+.glossymenu div.submenu{ /*DIV that contains each sub menu*/
+background: #e7f3f6; 
+}
+
+.glossymenu div.submenu ul{ /*UL of each sub menu*/
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+.glossymenu div.submenu ul li{
+border-bottom:#bfdde5 solid 1px;
+}
+
+.glossymenu div.submenu ul li a{
+display: block;
+font: normal 12px "arial", Verdana, Helvetica, sans-serif;
+color: black;
+text-decoration: none;
+padding: 5px 0;
+padding-left: 10px;
+border-bottom:#bfdde5 solid 1px;
+}
+
+.glossymenu div.submenu ul li a:hover{
+background: #f0f8fa;
+colorz: white;
+}
+
+.table {border-collapse:collapse ;}
+
+.Lpart{float:left; margin:10px 0px 0px 0px; padding:0px; width:134px;}
+.Rpart{float:right; margin:10px 0px 0px 0px; padding:0px; width:578px; font-size:14px; line-height:18px;}
+
+table, tr, td{ font-size:12px; line-height:16px;}
+
+h4{ color:#21B1CB; font-size:15px; line-height:21px; }
