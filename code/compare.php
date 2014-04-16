@@ -45,7 +45,7 @@ include_once("codelibrary/functions.php");
   <tr>
     <td width="165" bgcolor="#E0EFF3"><strong>Model</strong></td>
 	<?
-	$sql_model=mysql_query("select model_no from tbl_products where published=1 order by id");
+	$sql_model=mysql_query("select model_no from tbl_products where published=1  and lang = 1 order by id");
 	$i=1;
 	while($model=mysql_fetch_array($sql_model)){
 	if($i==1){$width='width="40"';
@@ -61,84 +61,84 @@ include_once("codelibrary/functions.php");
   </tr>
   <tr>
     <td bgcolor="#F7FBFC"><strong>Room Size SQM</strong></td>
-	<? $sql_model=mysql_query("select sqm from tbl_products where published=1 order by id");
+	<? $sql_model=mysql_query("select sqm from tbl_products where published=1  and lang = 1 order by id");
 	while($model=mysql_fetch_array($sql_model)){?>
     <td align="center" bgcolor="#F7FBFC"><?=$model['sqm'];?></td>
 	<? }?>
   </tr>
   <tr>
     <td bgcolor="#E0EFF3"><strong>Dust Sensor</strong></td>
-	<? $sql_model=mysql_query("select dust_sensor from tbl_products where published=1 order by id");
+	<? $sql_model=mysql_query("select dust_sensor from tbl_products where published=1  and lang = 1 order by id");
 	while($model=mysql_fetch_array($sql_model)){?>
     <td align="center" bgcolor="#E0EFF3"><? if($model['dust_sensor']==1){echo "Yes";}else{ echo "No";}?></td>
 	<? }?>
   </tr>
   <tr>
     <td bgcolor="#F7FBFC"><strong>Remote</strong></td>
-	<? $sql_model=mysql_query("select remote from tbl_products where published=1 order by id");
+	<? $sql_model=mysql_query("select remote from tbl_products where published=1  and lang = 1 order by id");
 	while($model=mysql_fetch_array($sql_model)){?>
     <td align="center" bgcolor="#F7FBFC"><? if($model['remote']==1){echo "Yes";}else{ echo "No";}?></td>
 	<? }?>
   </tr>
   <tr>
     <td bgcolor="#E0EFF3"><strong>Speed Options</strong></td>
-	<? $sql_model=mysql_query("select speed_options from tbl_products where published=1 order by id");
+	<? $sql_model=mysql_query("select speed_options from tbl_products where published=1  and lang = 1 order by id");
 	while($model=mysql_fetch_array($sql_model)){?>
     <td align="center" bgcolor="#E0EFF3"><?=$model['speed_options'];?></td>
 	<? }?>
   </tr>
   <tr>
     <td bgcolor="#F7FBFC"><strong>Air Inlet</strong></td>
-	<? $sql_model=mysql_query("select air_inlet from tbl_products where published=1 order by id");
+	<? $sql_model=mysql_query("select air_inlet from tbl_products where published=1  and lang = 1 order by id");
 	while($model=mysql_fetch_array($sql_model)){?>
     <td align="center" bgcolor="#F7FBFC"><?=$model['air_inlet'];?></td>
 	<? }?>
   </tr>
   <tr>
     <td bgcolor="#E0EFF3"><strong>Air Outlet</strong></td>
-	<? $sql_model=mysql_query("select air_outlet from tbl_products where published=1 order by id");
+	<? $sql_model=mysql_query("select air_outlet from tbl_products where published=1  and lang = 1 order by id");
 	while($model=mysql_fetch_array($sql_model)){?>
     <td align="center" bgcolor="#E0EFF3"><?=$model['air_outlet'];?></td>
 	<? }?>
   </tr>
   <tr>
     <td bgcolor="#F7FBFC"><strong>Wheels</strong></td>
-	<? $sql_model=mysql_query("select wheels from tbl_products where published=1 order by id");
+	<? $sql_model=mysql_query("select wheels from tbl_products where published=1  and lang = 1 order by id");
 	while($model=mysql_fetch_array($sql_model)){?>
     <td align="center" bgcolor="#F7FBFC"><? if($model['wheels']==1){echo "Yes";}else{ echo "No";}?></td>
 	<? }?>
   </tr>
   <tr>
     <td bgcolor="#E0EFF3"><strong>Timer</strong></td>
-	<? $sql_model=mysql_query("select timer from tbl_products where published=1 order by id");
+	<? $sql_model=mysql_query("select timer from tbl_products where published=1  and lang = 1 order by id");
 	while($model=mysql_fetch_array($sql_model)){?>
     <td align="center" bgcolor="#E0EFF3"><? if($model['timer']==1){echo "Yes";}else{ echo "No";}?></td>
 	<? }?>
   </tr>
   <tr>
     <td bgcolor="#F7FBFC"><strong>Clean air Delivery Rate</strong></td>
-	<? $sql_model=mysql_query("select delivery_rate from tbl_products where published=1 order by id");
+	<? $sql_model=mysql_query("select delivery_rate from tbl_products where published=1  and lang = 1 order by id");
 	while($model=mysql_fetch_array($sql_model)){?>
     <td align="center" bgcolor="#F7FBFC"><?=$model['delivery_rate'];?></td>
 	<? }?>
   </tr>
   <tr>
     <td bgcolor="#E0EFF3"><strong>Regular Price(RMB)</strong></td>
-	<? $sql_model=mysql_query("select regular_price from tbl_products where published=1 order by id");
+	<? $sql_model=mysql_query("select regular_price from tbl_products where published=1  and lang = 1 order by id");
 	while($model=mysql_fetch_array($sql_model)){?>
     <td align="center" bgcolor="#E0EFF3"><?=$model['regular_price'];?></td>
 	<? }?>
   </tr>
   <tr>
     <td bgcolor="#F7FBFC"><strong style="color:#FF0000;">Our Price(RMB)</strong></td>
-	<? $sql_model=mysql_query("select our_price from tbl_products where published=1 order by id");
+	<? $sql_model=mysql_query("select our_price from tbl_products where published=1  and lang = 1 order by id");
 	while($model=mysql_fetch_array($sql_model)){?>
     <td align="center" bgcolor="#F7FBFC" style="color:#FF0000;"><? if($model['our_price']>0){ echo $model['our_price'];}else{ echo "XXX";}?></td>
 	<? }?>
   </tr>
   <tr>
     <td bgcolor="#E0EFF3"><strong style="color:#21B1CB;">In Stock?</strong></td>
-	<? $sql_model=mysql_query("select availability from tbl_products where published=1 order by id");
+	<? $sql_model=mysql_query("select availability from tbl_products where published=1  and lang = 1 order by id");
 	while($model=mysql_fetch_array($sql_model)){?>
     <td align="center" bgcolor="#E0EFF3" style="color:#21B1CB;"><? if($model['availability']==1){echo "Yes";}else{ echo "No";}?></td>
 	<? }?>
