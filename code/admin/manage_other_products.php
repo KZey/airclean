@@ -5,22 +5,17 @@ include_once("../codelibrary/pager.php");
 adminChklogin();
 if(isset($_GET['mode']) && $_GET['mode']=='del')
 {
-	mysql_query("delete from tbl_products where id='".$_GET['id']."'");
+	mysql_query("delete from tbl_other_products where id='".$_GET['id']."'");
 	$_SESSION['sess_message']="Product Deleted Successfully";
-	header("location:manage_products.php");
+	header("location:manage_other_products.php");
 	exit();
 }
 if(isset($_GET['mode']) && $_GET['mode']=='change_status')
 {
-	if($_GET['status']==1)
-	{
-	$status=0;
-	}else{
-	$status=1;
-	}
-	mysql_query("UPDATE tbl_products SET published='".$status."' where id='".$_GET['id']."'");
+	if($_GET['status']==1){ $status=0; }else{ $status=1; }
+	mysql_query("UPDATE tbl_other_products SET published='".$status."' where id='".$_GET['id']."'");
 	$_SESSION['sess_message']="Updated Successfully.";
-	header("location:manage_products.php");
+	header("location:manage_other_products.php");
 	exit();
 }
 ?>
@@ -33,13 +28,13 @@ if(isset($_GET['mode']) && $_GET['mode']=='change_status')
 <body>
 <table width="100%" border="0" cellspacing="0" cellpadding="10">
  <tr>
-  <td align="left" valign="top"><a href="index.php" class="new_text">Home</a> >><span class="new_text"> Manage Products</span></td>
+  <td align="left" valign="top"><a href="index.php" class="new_text">Home</a> >> <span class="new_text"> Manage Other Products</span></td>
    </tr>
 	<tr>
 	 <td align="center" valign="top">
 	  <table width="80%" border="0" cellspacing="0" cellpadding="5">
 	   <tr>
-		<td align="left" class="TD-Heading">Manage Products <div style="float:right;"><a href="add_products.php" class="buttonbox">Add Product</a></div></td>
+		<td align="left" class="TD-Heading">Manage Other Products <div style="float:right;"><a href="add_other_products.php" class="buttonbox">Add Other Product</a></div></td>
 		 </tr>
 		 <tr>
           <td class="bdr-3sides"><div align="center"><font color="#00CC33" size="2"><b>
@@ -47,7 +42,6 @@ if(isset($_GET['mode']) && $_GET['mode']=='change_status')
 		  <table width="100%" border="0" cellpadding="4" cellspacing="1" class="text">
 		  <tr>
 		  <td width="25" align="left" bgcolor="#EEEEEE"><strong>#</strong></td>
-		  <td width="150" align="left" bgcolor="#EEEEEE"><strong>Category</strong></td>
 		  <td width="250" align="left" bgcolor="#EEEEEE"><strong>Product Name</strong></td>			  
 		  <td width="150" align="left" bgcolor="#EEEEEE"><strong>Regular Price</strong></td>
 		  <td width="150" align="left" bgcolor="#EEEEEE"><strong>Our Price</strong></td>
@@ -58,31 +52,27 @@ if(isset($_GET['mode']) && $_GET['mode']=='change_status')
 			$limit=25;
 			$p = new Pager; 
 			$start = $p->findStart($limit);
-			$sqlcms=mysql_query("select * from tbl_products where lang = 1");
+			$sqlcms=mysql_query("select * from tbl_other_products where lang =1");
 			$count=mysql_num_rows($sqlcms);
 			$pages = $p->findPages($count, $limit);
 			if($count)
 			{
-					if($_GET['page']=='' || $_GET['page']==1)
-			{
-				$i=1;
-			}else{
-				$i=$limit*($_GET['page']-1)+1;
-			}
-			$sqlcms=mysql_query("select * from tbl_products where lang = 1 limit $start,$limit");
+				if($_GET['page']=='' || $_GET['page']==1){
+					$i=1;
+				}else{
+					$i=$limit*($_GET['page']-1)+1;
+				}
+				$sqlcms=mysql_query("select * from tbl_other_products where lang=1 limit $start,$limit");
 			while($data=mysql_fetch_array($sqlcms))
 			{
 			?>
 		   	<tr valign="middle">
 			 <td width="24" align="left" class="botline"><?=$i++;?></td>
-		  	 <td align="left" class="botline"><?=fetchval('category_name',$data['cateid'],'cate_id','tbl_category');?></td>
 			 <td align="left" class="botline"><?=$data['product_name'];?></td>
 			 <td align="left" class="botline"><?=$data['regular_price'];?></td>
 			 <td align="left" class="botline"><?=$data['our_price'];?></td>
-			 <td align="left" class="botline"><a href="manage_products.php?mode=change_status&id=<?=$data['id'];?>&status=<?=$data['published'];?>">
-			 <? if($data['published']==1) echo "Active";else echo "Deactive";?></a></td>
-			 <td align="right" class="botline"><a href="edit_products.php?id=<?=$data['id'];?>" class="buttonbox">Edit</a>&nbsp;
-			 <a href="javascript:void(0)" class="buttonbox" onclick="asktodelete('manage_products.php?id=<?=$data['id']?>&mode=del')">Delete</a></td>
+			 <td align="left" class="botline"><a href="manage_other_products.php?mode=change_status&id=<?=$data['id'];?>&status=<?=$data['published'];?>">			 <? if($data['published']==1) echo "Active";else echo "Deactive";?></a></td>
+			 <td align="right" class="botline"><a href="edit_other_products.php?id=<?=$data['id'];?>" class="buttonbox">Edit</a>&nbsp;<a href="javascript:void(0)" class="buttonbox" onclick="asktodelete('manage_other_products.php?id=<?=$data['id']?>&mode=del')">Delete</a></td>
 		   </tr>
 			<? 
 			}
@@ -112,13 +102,12 @@ if(isset($_GET['mode']) && $_GET['mode']=='change_status')
 <script language="javascript">
 function asktodelete(path)
 {
-var ans=confirm(" Do you want to delete Product? ");
-if(ans==true)
-{
-document.location=path;
-return true;
-}else{
-return false;
-}
+	var ans=confirm("Do you want to delete Product?");
+	if(ans==true){
+		document.location=path;
+		return true;
+	}else{
+		return false;
+	}
 }
 </script>

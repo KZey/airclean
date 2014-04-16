@@ -19,7 +19,7 @@ adminChklogin();
 	 <td align="center" valign="top">
 	  <table width="80%" border="0" cellspacing="0" cellpadding="5">
 	   <tr>
-		<td align="left" class="TD-Heading">Manage CMS Pages Information</td>
+		<td align="left" class="TD-Heading">Manage CMS Pages Information &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='./manage_cms.php'>English  pages</a></td>
 		 </tr>
 		  <tr>
 		   <td class="bdr-3sides"><div align="center" style="color:#990000; font-weight:bold;"><? if(isset($_SESSION['ses_message']) && $_SESSION['ses_message']) { echo $_SESSION['ses_message']; $_SESSION['ses_message'] = "";} ?></div>
@@ -33,7 +33,7 @@ adminChklogin();
 			$limit=25;
 			$p = new Pager; 
 			$start = $p->findStart($limit);
-			$sqlcms=mysql_query("select * from tbl_cms where lang = 1 and meta_desc!='0'");
+			$sqlcms=mysql_query("select * from tbl_cms where lang = 2 and meta_desc!='0'");
 			$count=@mysql_num_rows($sqlcms);
 			$pages = $p->findPages($count, $limit);
 			if($count)
@@ -44,7 +44,7 @@ adminChklogin();
 			}else{
 				$i=$limit*($_GET['page']-1)+1;
 			}
-			$sqlcms=mysql_query("select * from tbl_cms where lang = 1 and meta_desc!='0' limit $start,$limit");
+			$sqlcms=mysql_query("select * from tbl_cms where lang = 2 and meta_desc!='0' limit $start,$limit");
 			while($data=mysql_fetch_array($sqlcms))
 			{
 			?>

@@ -1,7 +1,7 @@
 <?php
-include_once("../codelibrary/connection.php");
-include_once("../codelibrary/functions.php");
-include_once("../codelibrary/pager.php");
+include_once("../../codelibrary/connection.php");
+include_once("../../codelibrary/functions.php");
+include_once("../../codelibrary/pager.php");
 adminChklogin();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -33,7 +33,7 @@ adminChklogin();
 			$limit=25;
 			$p = new Pager; 
 			$start = $p->findStart($limit);
-			$sqlcms=mysql_query("select * from tbl_cms where lang = 1 and meta_desc!='0'");
+			$sqlcms=mysql_query("select * from tbl_cms where lang = 2 and meta_desc!='0'");
 			$count=@mysql_num_rows($sqlcms);
 			$pages = $p->findPages($count, $limit);
 			if($count)
@@ -44,7 +44,7 @@ adminChklogin();
 			}else{
 				$i=$limit*($_GET['page']-1)+1;
 			}
-			$sqlcms=mysql_query("select * from tbl_cms where lang = 1 and meta_desc!='0' limit $start,$limit");
+			$sqlcms=mysql_query("select * from tbl_cms where lang = 2 and meta_desc!='0' limit $start,$limit");
 			while($data=mysql_fetch_array($sqlcms))
 			{
 			?>

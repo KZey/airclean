@@ -1,6 +1,6 @@
 <?php
-include("../codelibrary/connection.php");
-include("../codelibrary/functions.php");
+include("../../codelibrary/connection.php");
+include("../../codelibrary/functions.php");
 adminChklogin();
 $cate_id=base64_decode($_GET['cate_id']);
 if($_SERVER['REQUEST_METHOD']=='POST')
@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 	{
 		$rand=rand();
 		$file=$rand.$file;
-		$uploaddir="../uploads/";
+		$uploaddir="../../uploads/";
 		$dirimage=$uploaddir.$file;
 		move_uploaded_file($_FILES['TN_File']['tmp_name'],$dirimage);
 	}else{
@@ -25,12 +25,14 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 	{
 		$sqlmax = mysql_fetch_array(mysql_query("SELECT max(sort_id) as sort FROM tbl_category LIMIT 1"));
 		$max = ($sqlmax['sort']+1);
-		mysql_query("INSERT INTO tbl_category SET category_name='".$TR_Category_Name."',image='".$file."',description='".$TR_Description."',sort_id='".$max."',published='".$TR_Status."', description_cn='".$TR_Description_cn."'");
+		$sql = "INSERT INTO tbl_category SET category_name='".$TR_Category_Name."',image='".$file."',description='".$TR_Description."',sort_id='".$max."',published='".$TR_Status."', description_cn='".$TR_Description_cn."'";
+		mysql_query($sql);
 		$_SESSION['sess_message']="Added Successfully..";
-		header("location:manage_category.php");
-		exit();
+	echo $sql;	
+		//header("location:manage_category.php");
+		//exit();
 	}else{
-		mysql_query("UPDATE tbl_category SET category_name='".$TR_Category_Name."',image='".$file."',description='".$TR_Description."',published='".$TR_Status."' , description_cn='".$TR_Description_cn."'   where cate_id='".$cate_id."'");
+		mysql_query("UPDATE tbl_category SET category_name='".$TR_Category_Name."',image='".$file."',description='".$TR_Description."',published='".$TR_Status."' , description_cn='".$TR_Description_cn."'  where cate_id='".$cate_id."'");
 		$_SESSION['sess_message']="Updated Successfully..";
 		header("location:add_category.php?cate_id=".$_GET['cate_id']."&mode=edit");
 		exit();
@@ -67,9 +69,9 @@ if($_GET['mode']=='edit') { $cat_data=mysql_fetch_array(mysql_query("select * fr
 		 <td width="100" align="left" class="botline" valign="middle">Description</td>
 		 <td align="left" valign="top" class="botline">
 		<?php
-		include("../ckeditor/ckeditor.php");
+		include("../../ckeditor/ckeditor.php");
 		$CKeditor = new CKeditor();
-		$CKeditor->BasePath = '../ckeditor/';
+		$CKeditor->BasePath = '../../ckeditor/';
 		$CKeditor->editor('TR_Description',$cat_data['description']);
 		?>
 		</td>
@@ -78,9 +80,9 @@ if($_GET['mode']=='edit') { $cat_data=mysql_fetch_array(mysql_query("select * fr
 		   <td width="100" align="left" class="botline" valign="middle">Chinese Description</td>
 		   <td align="left" valign="top" class="botline">
 		            <?php
-		             include("../ckeditor/ckeditor.php");
+		             include("../../ckeditor/ckeditor.php");
 			         $CKeditor = new CKeditor();
-			         $CKeditor->BasePath = '../ckeditor/';
+			         $CKeditor->BasePath = '../../ckeditor/';
 			         $CKeditor->editor('TR_Description_cn',$cat_data['description_cn']);
 			        ?>
 		    </td></tr>
@@ -91,7 +93,7 @@ if($_GET['mode']=='edit') { $cat_data=mysql_fetch_array(mysql_query("select * fr
 	    </tr>
 	   <tr valign="top">
 		<td width="123" align="left" class="botline">&nbsp;</td>
-		 <td align="left" class="botline"><? if($cat_data['image']){?><img src="../uploads/<?=$cat_data['image'];?>" width="800" height="250"><? }?></td>
+		 <td align="left" class="botline"><? if($cat_data['image']){?><img src="../../uploads/<?=$cat_data['image'];?>" width="800" height="250"><? }?></td>
 	   </tr>
 	    </tr>
 	 	<tr valign="middle">
@@ -108,7 +110,7 @@ if($_GET['mode']=='edit') { $cat_data=mysql_fetch_array(mysql_query("select * fr
 		 <td align="left" class="botline"><input type="submit" name="Submit" value="Submit"></td>
 	   </tr>
 	   </table>
-	   <input type="hidden" name="oldimage" value="<?=$cat_data['image'];?>"/>
+	   <input type="hidden" name="oldimage" value="<?=$cat_data['image'];?>" />
 	  </form>
 	 </td>
     </tr>

@@ -1,7 +1,7 @@
 <?php
-include_once("../codelibrary/connection.php");
-include_once("../codelibrary/functions.php");
-include("../codelibrary/imgresizer.php");  
+include_once("../../codelibrary/connection.php");
+include_once("../../codelibrary/functions.php");
+include("../../codelibrary/imgresizer.php");  
 if($_SERVER['REQUEST_METHOD']=='POST')
 {
 	$TR_Page_Name=$_POST['TR_Page_Name'];
@@ -16,11 +16,11 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 		{
 			$rand=rand();
 			$file=$rand.$file;
-			$uploaddir="../slider/";
+			$uploaddir="../../slider/";
 			$dirimage=$uploaddir.$file;
 			move_uploaded_file($_FILES['TR_File']['tmp_name'],$dirimage);
 		}
-		mysql_query("INSERT INTO tbl_slider SET alt='".$TR_Alt."',image='".$file."',published='".$TR_Published."', lang = 1");
+		mysql_query("INSERT INTO tbl_slider SET alt='".$TR_Alt."',image='".$file."',published='".$TR_Published."', lang = 2");
 		$_SESSION['gallery']="Record Added Successfully..";
 		header("location:manage_slider.php");
 		exit();
@@ -31,7 +31,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 		{
 			$rand=rand();
 			$file=$rand.$file;
-			$uploaddir="../slider/";
+			$uploaddir="../../slider/";
 			$dirimage=$uploaddir.$file;
 			move_uploaded_file($_FILES['TN_File']['tmp_name'],$dirimage);
 		}else{

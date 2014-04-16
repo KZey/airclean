@@ -1,8 +1,8 @@
 <?php
 ob_start();
-include_once("../codelibrary/connection.php");
-include_once("../codelibrary/functions.php");
-include_once("../codelibrary/pager.php");
+include_once("../../codelibrary/connection.php");
+include_once("../../codelibrary/functions.php");
+include_once("../../codelibrary/pager.php");
 adminChklogin();
 if($_GET['mode']=='del')
 {
@@ -59,7 +59,7 @@ exit();
     	$limit=30;
 		$p = new Pager; 
 		$start = $p->findStart($limit);
-		$sqlcms=mysql_query("select * from tbl_slider where lang =1 ");
+		$sqlcms=mysql_query("select * from tbl_slider where lang = 2");
 		$count=mysql_num_rows($sqlcms);
   		$pages = $p->findPages($count, $limit);
   		if($count)
@@ -70,13 +70,13 @@ exit();
 		}else{
 			$i=$limit*($_GET['page']-1)+1;
 		}
-		$sqlcms=mysql_query("select * from tbl_slider where lang = 1 order by id desc limit $start,$limit");
+		$sqlcms=mysql_query("select * from tbl_slider where lang = 2 order by id desc limit $start,$limit");
    		while($data=mysql_fetch_array($sqlcms))
 	    {
 		?>
 		   <tr valign="middle">
 			 <td width="23" align="left" class="botline"><?=$i++;?></td>
-			  <td align="left" class="botline"><img src="../slider/<?=$data['image'];?>" width="250" height="100" /></td>
+			  <td align="left" class="botline"><img src="../../slider/<?=$data['image'];?>" width="250" height="100" /></td>
 			  <!-- <td align="left" class="botline"><? //=substr(strip_tags($data['alt']),0,100);?>...</td> -->
 			  <td align="left" class="botline"><a href="manage_slider.php?id=<?=$data['id'];?>&mode=change_status&status=<?=$data['published'];?>"><? if($data['published']==1) echo "Active";else echo "Deactive";?></a></td>
 			  <td align="right" class="botline"><a href="add_slider_image.php?mode=edit&id=<?=$data['id'];?>"  class="buttonbox" >Edit</a>&nbsp;&nbsp;<a href="javascript:void(0)" class="buttonbox" onclick="asktodelete('manage_slider.php?id=<?=$data['id']?>&mode=del')">Delete</a></td>

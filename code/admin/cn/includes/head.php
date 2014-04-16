@@ -6,7 +6,7 @@
 <script language="javascript" src="js/smart-jscript.js"></script>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
  <tr>
-   <td align="left" bgcolor="#FFF" height="90"><a href="index.php"><img src="../images/aircleaner_logo.png" border="0" style="margin:10px; "></a></td>
+   <td align="left" bgcolor="#FFF" height="90"><a href="index.php"><img src="../../images/aircleaner_logo.png" border="0" style="margin:10px; "></a></td>
    <td align="center" bgcolor="#FFF" height="90"><h1>CONTENT MANAGEMENT SYSTEM</h1></td>
  </tr>
 </table>
@@ -34,7 +34,8 @@
 </table>
 <table width="100%" border="0" cellspacing="0" cellpadding="5">
   <tr>
-    <td width="65%"><strong class="heading">&nbsp;Administrator Control Panel</strong>&nbsp;&nbsp;<strong class="heading_lang">English</strong>[<a class='heading_lang_a' href='./cn/index.php'>Swith to Chinese CMS</a>]</td>
+    <td width="65%"><strong class="heading">&nbsp;Administrator Control Panel</strong>&nbsp;&nbsp;<strong class="heading_lang">Chinese</strong>[<a class='heading_lang_a' href='../index.php'>Swith to English CMS</a>]</td>
+
     <td width="35%" align="right" class="Tahoma-14">You are Logged in as: <span class="style1"><strong>admin</strong></span></td>
   </tr>
 </table>

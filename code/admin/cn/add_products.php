@@ -1,7 +1,7 @@
 <?php
-include_once("../codelibrary/connection.php");
-include_once("../codelibrary/functions.php");
-include_once("../codelibrary/imgresizer.php");
+include_once("../../codelibrary/connection.php");
+include_once("../../codelibrary/functions.php");
+include_once("../../codelibrary/imgresizer.php");
 adminChklogin();
 if($_SERVER['REQUEST_METHOD']=='POST')
 {
@@ -25,7 +25,7 @@ $At_glance=$_POST['At_glance'];
 $Design=$_POST['Design'];
 $Technology=$_POST['Technology'];
 $How_it_works=$_POST['How_it_works'];
-$Lang = 1;
+$Lang = 2;
 
 	$file=$_FILES['image']['name'];
 	$type=basename($_FILES['image']['type']);
@@ -33,7 +33,7 @@ $Lang = 1;
 	{
 		$rand=rand();
 		$file=$rand.$file;
-		$uploaddir="../uploads/";
+		$uploaddir="../../uploads/";
 		$dirimage=$uploaddir.$file;
 		move_uploaded_file($_FILES['image']['tmp_name'],$dirimage);
 	}
@@ -177,9 +177,9 @@ exit();
 		 <td align="left" class="botline">
 		<?php
 		// Make sure you are using a correct path here.
-		include_once '../ckeditor/ckeditor.php';
+		include_once '../../ckeditor/ckeditor.php';
 		$ckeditor = new CKEditor();
-		$ckeditor->basePath = '../ckeditor/';
+		$ckeditor->basePath = '../../ckeditor/';
 		$ckeditor->config['filebrowserBrowseUrl'] = 'http://www.aircleanerpros.com/ckfinder/ckfinder.html';
 		$ckeditor->config['filebrowserImageBrowseUrl'] = 'http://www.aircleanerpros.com/ckfinder/ckfinder.html?type=Images';
 		$ckeditor->config['filebrowserFlashBrowseUrl'] = 'http://www.aircleanerpros.com/ckfinder/ckfinder.html?type=Flash';

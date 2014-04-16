@@ -1,7 +1,7 @@
 <?php
-include_once("../codelibrary/connection.php");
-include_once("../codelibrary/functions.php");
-include_once("../codelibrary/imgresizer.php");
+include_once("../../codelibrary/connection.php");
+include_once("../../codelibrary/functions.php");
+include_once("../../codelibrary/imgresizer.php");
 adminChklogin();
 if($_SERVER['REQUEST_METHOD']=='POST')
 {
@@ -9,7 +9,7 @@ $TR_Title=$_POST['TR_Title'];
 $TR_content=$_POST['TR_content'];
 $Url = $_POST['Url'];
 $TR_Published=$_POST['TR_Published'];
-mysql_query("insert into tbl_knowledge_center SET title='".$TR_Title."',url='".$Url."',content='".$TR_content."',published='".$TR_Published."' , lang = 2");
+mysql_query("insert into tbl_knowledge_center SET title='".$TR_Title."',url='".$Url."',content='".$TR_content."',published='".$TR_Published."', lang = 2");
 $_SESSION['sess_message']="Record Added Successfully";
 header("location:manage_knowledge_center.php");
 exit();
@@ -60,9 +60,9 @@ width: 550px !important;
 		<td align="left" valign="top" class="botline">
 		<?php
 		// Make sure you are using a correct path here.
-		include_once '../ckeditor/ckeditor.php';
+		include_once '../../ckeditor/ckeditor.php';
 		$ckeditor = new CKEditor();
-		$ckeditor->basePath = '../ckeditor/';
+		$ckeditor->basePath = '../../ckeditor/';
 		$ckeditor->config['filebrowserBrowseUrl'] = 'http://www.aircleanerpros.com/ckfinder/ckfinder.html';
 		$ckeditor->config['filebrowserImageBrowseUrl'] = 'http://www.aircleanerpros.com/ckfinder/ckfinder.html?type=Images';
 		$ckeditor->config['filebrowserFlashBrowseUrl'] = 'http://www.aircleanerpros.com/ckfinder/ckfinder.html?type=Flash';
