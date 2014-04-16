@@ -1,6 +1,6 @@
 <?php
-include_once("codelibrary/connection.php");
-include_once("codelibrary/functions.php");
+include_once 'codelibrary/connection.php';
+include_once 'codelibrary/functions.php';
 $cmsdata=pagedata('id','6','tbl_cms');
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -30,17 +30,17 @@ $cmsdata=pagedata('id','6','tbl_cms');
 <div id="slider-container">
   <ul id="slider-box">
    <div class="slide-pager-container">
-	<div id="slide-pager"></div>
-	</div>
-	<? $sqlslider=mysql_query("select * from tbl_slider where published=1");
-	while($slider=mysql_fetch_array($sqlslider)){?>
-	<li>
-	<div class="photo-banner" style="background-image:url(slider/<?=$slider['image'];?>)">
-	<!-- <div class="welcome-banner" <? //if($slider['id']==2){?> style="float:right; width:550px;"<? //}?>><? //=$slider['alt'];?></div> -->
-	<div class="corners"></div>
-	</div>
+    <div id="slide-pager"></div>
+    </div>
+    <?php $sqlslider=mysql_query("select * from tbl_slider where published=1 and  lang = 1");
+    while ($slider=mysql_fetch_array($sqlslider)) {?>
+    <li>
+    <div class="photo-banner" style="background-image:url(slider/<?=$slider['image'];?>)">
+    <!-- <div class="welcome-banner" <?php //if ($slider['id']==2) {?> style="float:right; width:550px;"<?php //}?>><?php //=$slider['alt'];?></div> -->
+    <div class="corners"></div>
+    </div>
     </li>
-	<? }?>
+    <?php }?>
    </ul>
   </div>
  </div>
@@ -71,9 +71,9 @@ $cmsdata=pagedata('id','6','tbl_cms');
 
 <!-- Box3 Start -->
 <div class="box3">
-<h1>Not sure which models suit your needs?</h1>
+<h1>Looking for other Pollution Control Products?</h1>
 
-<a href="service_packages.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image6','','images/service_h.png',1)"><img src="images/service.png" alt="services" name="Image6" width="135" height="30" border="0" id="Image6" style="margin-top:11px;" /></a>
+<a href="other_products.php" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image6','','images/otherproduct.png',1)"><img src="images/otherproduct.png" alt="services" name="Image6" width="135" height="30" border="0" id="Image6" style="margin-top:11px;" /></a>
 </div>
 <!-- Box3 End -->
 

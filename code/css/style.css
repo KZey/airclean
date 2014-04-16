@@ -37,6 +37,8 @@ h1, h2, h3, h4, h5, p, ul, li{margin:0px; padding:0px;}
 a{text-decoration:none; color:#0099FF;}
 a:hover{text-decoration:none; color:#115464;}
 
+
+
 .condition{font-size:14px; font-weight:normal;}
 
 #wrapper{width:980px; margin:0 auto;}
@@ -93,6 +95,7 @@ box-shadow: 0px 3px 3px 0px #b1b1b1;
 .bottom_box .price{ font:25px/30px Arial, Helvetica, sans-serif; border-top:#eeeeee solid 1px; text-align:center; margin:10px 10px 5px 10px; padding:10px 0 0px 0px;}
 .bodyrightContainer{width:200px; float:right;}
 .bodyrightContainer h1{font-family:'ZurichCnBTRegular', Arial, Helvetica, sans-serif; font-size:17px; color:#fff; font-weight:normal; background:#21b1cb; padding:12px 10px 5px 10px; text-transform:uppercase;}
+
 
 .menu{ margin:0px; padding:0px; border:#bfdde5 solid 1px;}
 .menu ul{list-style-type:none;}
@@ -257,5 +260,6 @@ colorz: white;
 .Rpart{float:right; margin:10px 0px 0px 0px; padding:0px; width:578px; font-size:14px; line-height:18px;}
 
 table, tr, td{ font-size:12px; line-height:16px;}
+
 
 h4{ color:#21B1CB; font-size:15px; line-height:21px; }

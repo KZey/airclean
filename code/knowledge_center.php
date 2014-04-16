@@ -34,7 +34,7 @@ $cmsdata=pagedata('id','7','tbl_cms');
 <div id="bodysubContainer">
 <div class="bodyleftContainer1">
 <h1>Knowledge Center</h1>
-<? $sql = "SELECT * FROM tbl_knowledge_center where published ='1'";
+<? $sql = "SELECT * FROM tbl_knowledge_center where published ='1'  and lang     = 2";
 $pager = new pager($sql,'page',10);
 $num_rows=$pager->rows;
 if($num_rows>0){
