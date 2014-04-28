@@ -8,7 +8,7 @@ $pagename = end($arr);?>
 <div class="toprightContainer">
 <div class="free_delievery">Free Delivery in Beijing!</div>
 <div class="cell_no">Call 13661143811</div>
-<div class="blueair_logo"><img src="images/blueair_logo.png" alt="blueair" width="182" height="41" /></div>
+<div class="blueair_logo"><a href='./cn/'><img src="../images/flag_cn.gif" hei    ght='20' width='30' alt="Chinese" border='0'></a>&nbsp;&nbsp;<img src="images/blueair_logo.png" alt="blueair" width="182" height="41" /></div>
 </div>
 <!-- Top Right Part End -->
 <div class="clear"></div>
